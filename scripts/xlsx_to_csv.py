@@ -2,8 +2,9 @@
 import pandas as pd
 from pathlib import Path
 
-XLSX = Path("data/tasks.xlsx")
-CSV  = Path("data/tasks.csv")
+BASE_DIR = Path(__file__).resolve().parent.parent
+XLSX = BASE_DIR / "data" / "tasks.xlsx"
+CSV  = BASE_DIR / "data" / "tasks.csv"
 
 def main():
     df = pd.read_excel(XLSX, engine="openpyxl", dtype={"Answer": str})
